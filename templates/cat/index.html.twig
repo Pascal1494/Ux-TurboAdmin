@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cat index
+{% endblock %}
+
+{% block body %}
+	<h1>Cat index</h1>
+
+	<div class="grid">
+		{% for cat in cats %}
+			<article>
+				<turbo-frame id="cat-{{cat.id}}">
+					<h2>{{ cat.name }}</h2>
+					<p>{{ cat.description }}</p>
+					<img src="{{ cat.image }}"></img>
+
+
+				<a role="button" href="{{ path('app_cat_edit', {'id': cat.id}) }}">edit</a>
+			</turbo-frame>
+		</article>
+	{% endfor %}
+
+	<article>
+		<turbo-frame id="cat-new">
+			<a role="button" href="{{ path('app_cat_new') }}">Create new</a>
+		</turbo-frame>
+	</article>
+</div>
+{% endblock %}

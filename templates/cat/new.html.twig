@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Cat{% endblock %}
+
+{% block body %}
+    <h1>Create new Cat</h1>
+    <turbo-frame id="cat-new">
+
+    {{ include('cat/_form.html.twig', {
+        'action_path' : path('app_cat_new'),
+        'frame_id' : '_top'
+    }
+
+    ) }}
+
+    <a href="{{ path('app_cat_index') }}">Cancel</a>
+    </turbo-frame>
+{% endblock %}

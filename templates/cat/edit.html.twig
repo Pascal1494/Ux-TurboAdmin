@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Cat
+{% endblock %}
+
+{% block body %}
+	<h1>Edit Cat</h1>
+	<turbo-frame id="cat-{{cat.id}}">
+
+		{{ include('cat/_form.html.twig', {'button_label': 'Update', 
+         'action_path': path('app_cat_edit', {'id': cat.id}),
+         'frame_id' : 'cat_' ~ cat.id,
+        }) }}
+
+		{{ include('cat/_delete_form.html.twig') }}
+		<a href="{{ path('app_cat_index') }}">Cancel</a>
+
+	</turbo-frame>
+{% endblock %}

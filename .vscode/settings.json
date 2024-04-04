@@ -1,0 +1,11 @@
+{
+    "editor.autoClosingQuotes": "always",
+    "editor.indentSize": "tabSize",
+
+    "command-shortcuts": [
+        {
+          "command": "symfony console make:migration",
+          "shortcut": "scmm"
+        }
+      ]
+}
